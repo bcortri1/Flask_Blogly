@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="profile">
+    <img src="{{user.image_url}}" alt="{{user.full_name}}'s profile photo">
+</div>
+<div class="container">
+    <div>
+        <h2>{{user.full_name}}</h2>
+        <form>
+            <button formaction="/users/{{user.id}}/edit" formmethod="get">Edit</button>
+            <button class="delete" formaction="/users/{{user.id}}/delete" formmethod="post">Delete</button>
+        </form>
+    </div><br>
+    <div class="border">
+        <h2>Posts</h2>
+        <ul>
+        {% for post in posts %}
+            <li><a href="/posts/{{post.id}}">{{post.title}}</a></li>
+        {% endfor %}
+        </ul>
+        <form>
+            <button formaction="/users/{{user.id}}/posts/new" formmethod="get">Add Post</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

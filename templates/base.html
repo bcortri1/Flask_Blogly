@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogly</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body> 
+    <div class="top-bar"></div><a href="/"><h1 class="home">B</h1></a>
+    <div class="top-bar">
+        <div class="border">
+            <a href="/users">
+                <h2>Users</h2>
+            </a>
+        </div>
+    </div>
+    
+    <div class="top-bar">
+        <div class="border">
+            <a href="/posts">
+                <h2>Posts</h2>
+            </a>
+        </div>
+    </div>
+    
+    <div class="top-bar">
+        <div class="border">
+            <a href="/tags">
+                <h2>Tags</h2>
+            </a>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+    {% for msg in get_flashed_messages() %}
+        <p>{{ msg }}</p>
+    {% endfor %}
+    {% block content %}
+    {% endblock %}
+    </div>
+</body>
+
+</html>
