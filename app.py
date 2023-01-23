@@ -11,8 +11,8 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///blogly'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = False
-app.config['SECRET KEY'] = "Testing"
-#debug = DebugToolbarExtension(app)
+app.config['SECRET_KEY'] = "Testing"
+debug = DebugToolbarExtension(app)
 
 
 
